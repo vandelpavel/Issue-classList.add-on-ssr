@@ -54,11 +54,24 @@ export default defineComponent({
 
       containerRef.value.style.height = imageHeight.value;
       image.value.style.clipPath = 'url(#' + uniqueId.value + ')';
-      image.value.classList.add('clip-image');
 
-      // image.value.style.objectFit = ' cover';
+      //////////////////////////////////////////////////////////////////////////////////////////////////////
+      image.value.classList.add('clip-image'); //        <---- That is the line that reproduce the error
+
+      //////////////////////////////////////////////////////////////////////////////////////////////////////
+      // image.value.style.objectFit = ' cover'; //       <---- This is how you can 'fix' it directly adding the attributes
       // image.value.style.width = ' 100%';
       // image.value.style.height = ' 100%';
+
+      //////////////////////////////////////////////////////////////////////////////////////////////////////
+      // setTimeout(() => {
+      //   image.value.classList.add('clip-image');
+      // }, 0);
+      //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^This is how you can 'fix' it adding the set
+
+      console.log(image.value.classList);
+      //          ^^^^^^^^^^^^^^^^^^^^^ As you will see the classes are present in the log but if you check in the element section from dev tools
+      //                                the 'clip-image' class is not present
     });
 
     watch(
