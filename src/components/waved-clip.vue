@@ -52,8 +52,6 @@ export default defineComponent({
       const content = ref(containerRef.value.children[1]) as Ref<HTMLElement>;
       const image = ref(content.value);
 
-      console.log('containerRef=', containerRef.value);
-      console.log('image=', image.value);
       containerRef.value.style.height = imageHeight.value;
       image.value.style.clipPath = 'url(#' + uniqueId.value + ')';
       image.value.classList.add('clip-image');

@@ -38,7 +38,6 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      console.log('underWaveRef=', underWaveRef.value);
       underWaveRef.value.style.height = imageHeight.value;
       underWaveRef.value.style.clipPath = `url(#bottom-waved-${waveId.value})`;
       hostRef.value.style.height = 'calc(' + imageHeight.value + ' + 100px)';
