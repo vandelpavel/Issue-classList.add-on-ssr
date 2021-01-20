@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from '@vue/composition-api';
 import { scroll } from 'quasar';
-const { getScrollTarget, setScrollPosition } = scroll;
+const { setScrollPosition } = scroll;
 
 function scrollToSection() {
   setScrollPosition(window, 1000, 250);
